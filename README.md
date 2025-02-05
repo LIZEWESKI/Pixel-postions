@@ -1,13 +1,45 @@
-// Simple Algorithm Day 29
-We need to create a Tag Model/Migration and Factory
-Migration table we need to assert some columns
-for now its just the name of the tag
-than we need to create a pivot table for tags and jobs (keep in mind that the pivot table needs to be in ASC alpha order a,b,c etc and saparated by an underscore _ and also singular jobs => job)
-Then make a connection between the two Models (Job, Tag), The Eloquent Relationship will be HasMany/belongsToMany for both Models
-To attach tags to Job you have to call this hasAttached method that I didn't know about :)
-// Simple Algorithm Day 30
+# Job Listing Platform  
 
-Create a view,Route for Register/Login
-Validate the user input
-For register attach the user to an employer and create a path for the logo (use Public storage disc)
-Log in, regenerate the session, redirect 
+This project is a job listing platform where employers can create job postings, and they are listed for potential candidates. It is built using **Laravel Blade** following **Jeffrey Way's Laravel 30 Days Course**.  
+
+## Features  
+
+- Employers can create job postings.  
+- Jobs are displayed in a structured listing.  
+- Email notifications are sent upon job creation.  
+- Uses **Laravel Mail** with Mailtrap for testing.  
+- Implements **queues** to handle mail processing asynchronously.  
+
+## Tech Stack  
+
+- **Backend:** Laravel  
+- **Frontend:** Laravel Blade - Tailwind CSS
+- **Database:** MySQL (or any preferred database)  
+- **Mailing:** Laravel Mail with Mailtrap  
+
+## Installation  
+
+### 1. Clone the repository  
+```sh
+git clone <repo-url>
+cd job-listing-platform
+```
+### 2. Install dependencies
+```sh
+composer install
+npm install
+```
+### 3. Configure environment variables
+
+Copy .env.example to .env
+Set up database credentials
+Configure Mailtrap for email testing
+
+### 4. Run migrations
+```sh
+php artisan migrate --seed
+```
+### 5. Serve the project
+```sh
+php artisan serve
+```
